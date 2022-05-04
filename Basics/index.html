@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VueJS Course</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <!-- start Tamplate-->
+    <!-- v-cloak: um die den code auf der webseite zu verstecken-->
+    <div id="app" v-cloak>       
+      <p>First Vue Project</p>
+      <!-- run the expression with {{}}-->
+      2+2 = 
+      {{ 2 + 2 }}
+      <hr />
+      <p>First Name: {{ firstName }} </p>
+     
+      
+      <p>Second Name: {{ lastName }}</p>    
+      <p>Full Name: {{ fullName }} </p>
+      <p>Age: {{ age }}</p>
+      <p>Type Of Age: {{ typeof age }}</p>
+      <hr />
+
+      <!-- longhand version 'v-bind:' -->
+      <p><a v-bind:href="url_go" target="_blank">Google</a></p> 
+      <!-- shorthand version ':' -->  
+      <p><a :href="url_bi" target="_blank">Bing</a></p>  
+      <!-- view html version 'raw_url= html code' --> 
+      <p v-html ="raw_url"></p>                  
+      <hr />
+
+      <label>First Name</label>
+      <!-- Reacticity: the updates occur immediately-->
+      <!-- the lazy modifier will change when the data is update -->
+      <!-- the trim modifier will remove excessive white space -->
+      <input type="text" v-model.lazy.trim="firstName" />  
+      <label>Middle Name</label>
+      <!-- event will be calld only with the key 'enter'  -->
+      <input type="text" @keyup.enter="updateMiddleName" />
+      <label>Last Name</label>
+      <input type="text" :value="lastName" @input.prevent="updateLastName('here is my message' , $event)" />
+      <hr />
+      
+      <label>Age</label>
+      <!-- use the modifier 'number' to convert type of age to number -->
+      <input type="number" v-model.number="age" />
+      <!-- listen to events with v-on: and method increment -->
+      <button type="button" v-on:click="increment">Increment</button> 
+       <!-- listen to events with @ and without extra method -->
+      <button type="button" @click="age--">Dencrement</button> 
+
+      
+    </div>               
+    <!-- end Tamplate-->
+
+    
+    <!-- <div id="app2">      
+      <p>Hey</p>
+      {{ 2 + 2 }}
+      {{ firstName }}      
+      {{ lastName }}
+    </div>          -->
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
