@@ -25,6 +25,17 @@ When you hear the word state, it's another way of saying data.
 It's data that is carefully kept track of while the application is live on a user's browser.
 ```
 
+## VeeValidate
+```
+is Form Validation for Vue.js
+
+Validation Process: 
+1. Use the <Field /> component. 
+2. Assign a name to the input
+3. add the rules 
+4. Handle the errors
+```
+
 ## Project setup
 ```
 yarn install
